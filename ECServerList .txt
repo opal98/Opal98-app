@@ -1,0 +1,26 @@
+EaglerCraft 1.8.8 and 1.5.2 Server IP
+
+Note: Use this website! it has a lot of knowledge of servers and eaglercraft clients. https://radmanplays.github.io/
+
+ArchMC:
+
+wss://mc.arch.lol
+1.8.8
+
+A**pixel:
+
+wss://web.asspixel.net/CAP/
+1.5.2
+
+wss://mc.asspixel.net/
+1.8.8
+
+Aeon:
+
+wss://aeon-network.net/1.8
+1.8.8
+
+HellTech Network:
+
+wss://ggsmp.net/
+1.8.8

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Classroom</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Function to prompt the user for a link and set the iframe src
+        function setIframeSource() {
+            var userLink = prompt("Please enter the link:");
+            if (userLink !== null) {
+                // Trim leading and trailing spaces
+                userLink = userLink.trim();
+
+                // Add "https://" if it's not already included
+                userLink = userLink.startsWith("https://") ? userLink : "https://" + userLink;
+
+                document.querySelector('iframe').src = userLink;
+            }
+        }
+
+        // Automatically call the setIframeSource function after a delay to ensure the DOM is fully loaded
+        setTimeout(setIframeSource, 100);
+    </script>
+
+    <iframe src=""></iframe>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classroom</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/gh/FogNetwork/ABC/index.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        button.run {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #610101;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button.run:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            // Creates new ABC
+            var page = new ABC({
+                "type": "blank", // Blank, blob, or overwrite
+                "url": "./index.html" // Local file path
+            });
+
+            // Set the type
+            page.setType("blank");
+
+            // Set the local file path
+            page.setUrl("./index.html");
+
+            // Get iframe code
+            console.log(page.getCode());
+
+            // Open page
+            page.open();
+        };
+    </script>
+    <button class="run" onclick="runCode()">Please Allow Pop-up!</button>
+</body>
+</html>
