@@ -1,5 +1,2 @@
-<<<<<<< HEAD
-e
-=======
-# HELLO 
->>>>>>> a0f136d4b6e0e5e49bf29a319d0a01aad9ae3184
+# Opal98
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/BinBashBanana/deploy-buttons"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>
