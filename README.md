@@ -1,2 +1,2 @@
 # Opal98
-<a target="_blank" href="https://replit.com/github/github.com/opal98/Opal98-app"><img alt="Run on Replit" src="https://binbashbanana.github.io/deploy-buttons/buttons/official/replit.svg"></a>
+[![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/BinBashBanana/deploy-buttons)
