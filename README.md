@@ -7,4 +7,4 @@
 # ❗IMPORTANT❗
 ## First of all, if you had previously bought a USB drive with the static version of Opal98 it will stop receiving upates once this is deployable via buttons.
 ## If you had previously bought one from me, pleaes join the discord server and submit a ticket for your own ✨PERSONALIZED✨ link!
-<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/Opal98/Opal98-app"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a><a target="_blank" href="https://glitch.com/edit/#!/import/github/BinBashBanana/deploy-buttons"><img alt="Remix on Glitch" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg"></a>
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/Opal98/Opal98-app"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>   <a target="_blank" href="https://glitch.com/edit/#!/import/github/BinBashBanana/deploy-buttons"><img alt="Remix on Glitch" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg"></a>
