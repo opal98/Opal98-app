@@ -1,5 +1,5 @@
 # Opal98 v5
-<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/Opal98/Opal98-app"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>   <a target="_blank" href="https://vercel.com/new/clone?repository-url=https://github.com/opal98/Opal98-app"><img alt="Deploy to Vercel" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg"></a>   <a target="_blank" href="https://app.cyclic.sh/api/app/deploy/Opal98/Opal98-app"><img alt="Deploy to Cyclic" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg"></a>
+<a target="_blank" href="https://heroku.com/deploy/?template=https://github.com/Opal98/Opal98-app"><img alt="Deploy to Heroku" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg"></a>   <a target="_blank" href="https://vercel.com/new/clone?repository-url=https://github.com/opal98/Opal98-app"><img alt="Deploy to Vercel" src="https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg"></a>   
 
 ## Hello, This is the DEPLOYMENT version of Opal98.
 ![image](https://github.com/opal98/Opal98-app/assets/123478085/455780f6-f06a-4759-a1c3-ef217b674157)
