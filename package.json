@@ -1,0 +1,20 @@
+{
+   "name": "Opal98-app",
+   "version": "1.0.0",
+   "description": "",
+   "scripts": {
+       "build": "echo \"No build specified\" && exit 1",
+       "test": "echo \"No test specified\" && exit 1",
+       "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/opal98/Opal98-app.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/opal98/Opal98-app/issues"
+    },
+    "homepage": "https://github.com/opal98/Opal98-app#readme"
+}
