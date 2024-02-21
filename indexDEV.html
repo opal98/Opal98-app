@@ -204,6 +204,25 @@
   cursor: pointer;
   z-index: 1003;
 }
+#download-button {
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #555;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  z-index: 1002;
+  border: 1px solid #f71bff;
+
+}
+
+#download-button:hover {
+  background-color: #777;
+  color: #fff;
+}
 
 #profiles-menu {
   display: none;
@@ -404,6 +423,7 @@
     <div id="settings-icon">⚙️</div>
     <div id="settings-menu">
       <button id="cloak-tab-button">Cloak Tab</button>
+      <button id="download-button">Download Website</button>
       <button id="snowfall-toggle">Toggle Snowfall</button>
       <label for="snow-density">Snow Density:</label>
       <select id="snow-density">
@@ -434,6 +454,10 @@
       <img src="GamePhotos/uv.png" alt="Ultraviolet" class="game-image">
       Ultraviolet
     </a>
+    <a href="https://www.codecooler.net/" class="game-link">
+      <img src="GamePhotos/INV7.png" alt="INTV5" class="game-image">
+      Interstellar
+    </a>
     <a href="HtmlFiles/itch.html" class="game-link">
       <img src="GamePhotos/itch.png" alt="Itch.io" class="game-image">
       Itch.io
@@ -446,21 +470,17 @@
       <img src="GamePhotos/CC.png" alt="Cookie Clicker" class="game-image">
       Cookie Clicker
     </a>
-    <a href="EaglerVersions/EaglercraftX_1.8_Offline_en_US.html" class="game-link">
-      <img src="GamePhotos/188.png" alt="MC 1.8.8" class="game-image">
-      MC 1.8.8
-    </a>
-    <a href="EaglerVersions/eaglercraft.1.5.2.html" class="game-link">
-      <img src="GamePhotos/152.png" alt="MC 1.5.2" class="game-image">
-      MC 1.5.2
-    </a>
-    <a href="HtmlFiles/cutropetime.html" class="game-link">
-      <img src="GamePhotos/cutropetime.png" alt="Cut the rope" class="game-image">
-      Cut the Rope
+    <a href="./mc.html" class="game-link">
+      <img src="GamePhotos/MC.png" alt="MC" class="game-image">
+      Minecraft
     </a>
     <a href="HtmlFiles/bloxorz.html" class="game-link">
       <img src="GamePhotos/bloxorz.png" alt="Bloxorz" class="game-image">
       Bloxorz
+    </a>
+    <a href="HtmlFiles/monkeymart.html" class="game-link">
+      <img src="GamePhotos/monkeymart.jpg" alt="monkeymart" class="game-image">
+      Monkey Mart
     </a>
     <a href="n-gon/index.html" class="game-link">
       <img src="GamePhotos/ngon.png" alt="N-Gon" class="game-image">
@@ -510,10 +530,9 @@
       <img src="GamePhotos/ChromaIncident.png" alt="Chroma Incident" class="game-image">
       Chroma Incident
     </a>
-    <a href="1v1.lol/index.html" class="game-link">
+    <a href="./1v1.html" class="game-link">
       <img src="GamePhotos/1v1lol.png" alt="1v1.lol" class="game-image">
       1v1.lol
-    </a>
     <a href="HtmlFiles/drivemad.html" class="game-link">
       <img src="GamePhotos/DriveMad.png" alt="Drive Mad" class="game-image">
       Drive Mad
@@ -526,9 +545,21 @@
       <img src="GamePhotos/Terraria.png" alt="Terraria" class="game-image">
       Terraria
     </a>
+    <a href="HtmlFiles/jacksmith.html" class="game-link">
+      <img src="GamePhotos/jacksmith.jpg" alt="JackSmith" class="game-image">
+      JackSmith
+    </a>
     <a href="HtmlFiles/papapizza.html" class="game-link">
       <img src="GamePhotos/pizza.png" alt="Papa's Pizzeria" class="game-image">
       Papa's Pizzeria
+    </a>
+    <a href="HtmlFiles/papafreeze.html" class="game-link">
+      <img src="GamePhotos/freeze.jpg" alt="Papa's Freezeria" class="game-image">
+      Papa's Freezeria
+    </a>
+    <a href="HtmlFiles/papawings.html" class="game-link">
+      <img src="GamePhotos/wings.jpg" alt="Papa's Wingeria" class="game-image">
+      Papa's Wingeria
     </a>
     <a href="HtmlFiles/Candy.html" class="game-link">
       <img src="GamePhotos/candy.png" alt="Candy Crush" class="game-image">
@@ -537,6 +568,14 @@
     <a href="HtmlFiles/mergefruit.html" class="game-link">
       <img src="GamePhotos/mergefruit.png" alt="Merge Fruit" class="game-image">
       Merge Fruit
+    </a>
+    <a href="xx142-b2exe/index.html" class="game-link">
+      <img src="GamePhotos/xx142.png" alt="xx142-b2.exe" class="game-image">
+      xx142-b2.exe
+    </a>
+    <a href="HtmlFiles/idlebreakout.html" class="game-link">
+      <img src="GamePhotos/idleb.png" alt="Idle Breakout" class="game-image">
+      Idle Breakout
     </a>
     <a href="HtmlFiles/superhot.html" class="game-link">
       <img src="GamePhotos/superhot.png" alt="SH: Miami" class="game-image">
@@ -554,10 +593,6 @@
       <img src="GamePhotos/getover.png" alt="Getting over it" class="game-image">
       Getting over it
     </a>
-    <a href="HtmlFiles/smashkart.html" class="game-link">
-      <img src="GamePhotos/smashkarts.png" alt="Smash Karts" class="game-image">
-      Smash Karts
-    </a>
     <a href="worldshardestgame/index.html" class="game-link">
       <img src="GamePhotos/WorldsHardestGame.png" alt="WorldsHardestGame" class="game-image">
       WorldsHardest
@@ -567,12 +602,16 @@
       WorldsHardest2
     </a>
     <a href="HtmlFiles/SlopeGame.html" class="game-link">
-      <img src="GamePhotos/Slope.jpg" alt="Slope" class="game-image">
+      <img src="GamePhotos/slope.jpg" alt="Slope" class="game-image">
       Slope
     </a>
     <a href="HtmlFiles/tanuki.html" class="game-link">
       <img src="GamePhotos/tanuki.png" alt="Tanuki Sunset" class="game-image">
       Tanuki Sunset
+    </a>
+    <a href="HtmlFiles/driftboss.html" class="game-link">
+      <img src="GamePhotos/driftboss.png" alt="Drift Boss" class="game-image">
+      Drift Boss
     </a>
     <a href="HtmlFiles/gmayhem.html" class="game-link">
       <img src="GamePhotos/gmayhem.png" alt="Gun Mayhem" class="game-image">
@@ -581,10 +620,6 @@
     <a href="HtmlFiles/gmayhem2.html" class="game-link">
       <img src="GamePhotos/gmayhem2.png" alt="Gun Mayhem 2" class="game-image">
       Gun Mayhem 2
-    </a>
-    <a href="EaglerVersions/Cients/1.5.2/precision1.5.2.html" class="game-link">
-      <img src="GamePhotos/PrecisionClient.png" alt="Precision 1.5.2" class="game-image">
-      Precision 1.5.2
     </a>
     <a href="EaglerVersions/Cients/1.8.8/ShadowClient_1.8.8.html" class="game-link">
       <img src="GamePhotos/Optifine.png" alt="Optifine 1.8.8" class="game-image">
@@ -601,6 +636,10 @@
     <a href="justfalllol/index.html" class="game-link">
       <img src="GamePhotos/justfall.png" alt="JustFall.lol" class="game-image">
       JustFall.lol
+    </a>
+    <a href="HtmlFiles/3slice.html" class="game-link">
+      <img src="GamePhotos/3slice.png" alt="3 Slices" class="game-image">
+      3 Slices
     </a>
     <a href="HtmlFiles/portal.html" class="game-link">
       <img src="GamePhotos/portal.png" alt="Portal" class="game-image">
@@ -630,24 +669,36 @@
       <img src="GamePhotos/MotoX3M3.jpg" alt="Moto X3M 3" class="game-image">
       Moto X3M 3
     </a>
+    <a href="HtmlFiles/moto4.html" class="game-link">
+      <img src="GamePhotos/moto4.jpeg" alt="Moto X3M 4" class="game-image">
+      Moto X3M 4
+    </a>
+    <a href="HtmlFiles/moto5.html" class="game-link">
+      <img src="GamePhotos/moto5.png" alt="Moto X3M 5" class="game-image">
+      Moto X3M 5
+    </a>
+    <a href="HtmlFiles/moto6.html" class="game-link">
+      <img src="GamePhotos/moto6.jpg" alt="Moto X3M 3" class="game-image">
+      Moto X3M 6
+    </a>
     <a href="HtmlFiles/jellytruck.html" class="game-link">
       <img src="GamePhotos/jellytruck.jpg" alt="Jelly Truck" class="game-image">
       Jelly Truck
     </a>
-    <a href="HtmlFiles/Fnaf2.html" class="game-link">
-      <img src="GamePhotos/FNAF2.jpg" alt="FNAF 2" class="game-image">
-      FNAF 2
+    <a href="HtmlFiles/firewater1.html" class="game-link">
+      <img src="GamePhotos/firewater1.png" alt="Fireboy and Watergirl" class="game-image">
+      Fireboy & Watergirl
     </a>
-    <a href="HtmlFiles/Fnaf3.html" class="game-link">
-      <img src="GamePhotos/FNAF3.jpg" alt="FNAF 3" class="game-image">
-      FNAF 3
+    <a href="./fnaf.html" class="game-link">
+      <img src="GamePhotos/FNAF.jpg" alt="FNAF 2 & 3" class="game-image">
+      FNAF 2 & 3
     </a>
     <a href="HtmlFiles/Bloonstd4.html" class="game-link">
       <img src="GamePhotos/BloonsTD4.jpg" alt="BloonsTD 4" class="game-image">
       BloonsTD 4
     </a>
     <a href="HtmlFiles/BALDI.html" class="game-link">
-      <img src="GamePhotos/Baldi.jpeg" alt="BloonsTD 4" class="game-image">
+      <img src="GamePhotos/baldi.jpg" alt="BloonsTD 4" class="game-image">
       Baldi's Basics
     </a>
     <a href="HtmlFiles/Run3.html" class="game-link">
@@ -661,7 +712,7 @@
 
   <div id="version-info">👀</div>
 
-  <div id="version-tooltip">v5-PRO</div>
+  <div id="version-tooltip">v5.2.1</div>
 
   <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -754,6 +805,11 @@ document.addEventListener("DOMContentLoaded", function () {
   cloakTabButton.addEventListener("click", function () {
     window.open('./RUNME.html', '_blank');
   });
+  const downloadbutton = document.getElementById("download-button");
+
+downloadbutton.addEventListener("click", function () {
+  window.open('https://github.com/opal98/Opal98-app/archive/refs/heads/main.zip', '_blank');
+});
 
   themeModeDropdown.addEventListener("change", function () {
     const selectedTheme = themeModeDropdown.value;

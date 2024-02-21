@@ -52,7 +52,7 @@ class ABC {
             
                 doc.head.appendChild(link)
                 doc.body.appendChild(iframe)
-                location.replace(localStorage.getItem('panicLink') || 'https://www.nasa.gov/')
+                location.replace(localStorage.getItem('panicLink') || 'https://classroom.google.com/')
             } 
         }catch{}
         

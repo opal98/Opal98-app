@@ -204,6 +204,25 @@
   cursor: pointer;
   z-index: 1003;
 }
+#download-button {
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #555;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  z-index: 1002;
+  border: 1px solid #f71bff;
+
+}
+
+#download-button:hover {
+  background-color: #777;
+  color: #fff;
+}
 
 #profiles-menu {
   display: none;
@@ -404,6 +423,7 @@
     <div id="settings-icon">⚙️</div>
     <div id="settings-menu">
       <button id="cloak-tab-button">Cloak Tab</button>
+      <button id="download-button">Download Website</button>
       <button id="snowfall-toggle">Toggle Snowfall</button>
       <label for="snow-density">Snow Density:</label>
       <select id="snow-density">
@@ -785,6 +805,11 @@ document.addEventListener("DOMContentLoaded", function () {
   cloakTabButton.addEventListener("click", function () {
     window.open('./RUNME.html', '_blank');
   });
+  const downloadbutton = document.getElementById("download-button");
+
+downloadbutton.addEventListener("click", function () {
+  window.open('https://github.com/opal98/Opal98-app/archive/refs/heads/main.zip', '_blank');
+});
 
   themeModeDropdown.addEventListener("change", function () {
     const selectedTheme = themeModeDropdown.value;
