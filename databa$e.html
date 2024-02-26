@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Databa$e</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+      background-color: #000;
+      color: #00FF00; /* Green text */
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      color: #00FF00; /* Green text */
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #00FF00; /* Green text */
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      border: 1px solid #00FF00; /* Green border */
+      padding: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .method-description {
+      height: auto;
+      overflow: hidden;
+      transition: height 0.3s ease;
+    }
+
+    .method-expanded {
+      height: 100%;
+    }
+
+    .method-button {
+      background-color: #00FF00; /* Green background */
+      color: #000; /* Black text */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .method-button:hover {
+      background-color: #008000; /* Darker green on hover */
+    }
+
+    .suggest-button {
+      background-color: #00FF00; /* Green background */
+      color: #000; /* Black text */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto; /* Center the button */
+      margin-bottom: 20px; /* Add some space below the button */
+    }
+
+    .suggest-button:hover {
+      background-color: #008000; /* Darker green on hover */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Databa$e</h1>
+  </header>
+  <main>
+    <button class="suggest-button" onclick="openFile()">Suggest a Method</button>
+    <section id="methods">
+      <h2>Methods</h2>
+      <ul id="method-list">
+        <!-- All methods are represented by text descriptions -->
+        <li>
+          <h3>Welcome!</h3>
+          <p class="method-description">Welcome, please submite methods at the top of the screen.<br>
+          </p>
+        </li>
+        <li>
+          <h3>Skiovox Unblock</h3>
+          <p class="method-description">Note: This isn't my exploit, it's also generally undiscovered which I am suprised of<br>
+            <br>
+            https://github.com/Quartinal/Baghdad<br>
+            <br>
+            (a First, sign out of your Chromebook.<br>
+            <br>
+            (b Second, make sure you are using WiFi with custom DNS capabilities.<br>
+            <br>
+            (c Third, click the settings button located at the top right of the WiFi panel.<br>
+            <br>
+            (d Fourth, set Name servers to Custom name servers.<br>
+            <br>
+            (e Fifth, set the first Custom name servers value to 52.207.185.90.<br>
+            <br>
+            (f Sixth, you'll see a link in the normal district login window that says Visit this network's sign-in page.<br>
+            <br>
+            (g Once you see the sign-in page with a black background, click on the link Webview link for tests.<br>
+            <br>
+            (h Now, finally, you can browse without the annoyance of extensions!<br>
+            <br>
+            <br>
+            Note: according to him, the window only lasts for a minute, but for me it hasnt closed<br>
+          </p>
+        </li>
+        <li>
+          <h3>Disable Lightspeed</h3>
+          <p class="method-description">This method requires a lot of tabs (500-2000+) and disables Lightspeed by overloading it on your chromebook. <br>
+            <br>
+            REQUIREMENTS:<br>
+            -"Manage Extensions" is not blocked, and I do not know if this works on anything other than chromebook. It should work with other devices, but please try it out and let me know.<br>
+            -"Bookmark Manager" is not blocked, unless you want to spend hours getting the optimal amount of tabs in a folder.<br>
+            <br>
+            Here are the steps: <br>
+            Open up a blocked website. The URL will be something similar to chrome-extension://adkcpkpghahmbopkjchobieckeoaoeem/block_screen.html?id=... (I'm not going to type the rest of it)<br>
+            Copy everything UP TO "/block_screen.html?"<br>
+            Create a new folder<br>
+            Go to "Bookmark Manager", go to the folder, then hold paste to add the URL into the folder. This is so you can open all of them at once. For me and a few friends, the optimal amount was about 2000 tabs, but depending on your internet speed and device function, this is known to change.<br>
+            Right-click on the folder, then open all the tabs IN A NEW WINDOW. Otherwise the next step might be painful<br>
+            Switch back to the window you were in before, and KEEP THE LARGE GROUP OF TABS OPEN. Go to "Manage Extensions" and go to "Lightspeed Filter Agent." Scroll down, and toggle "Allow access to URLS"<br>
+            Open ONE of the tabs in a new window.<br>
+            <br>
+            If this method works, the size of the extension should not be loading. If your device crashes in the process, you will have to restart. Optimal amount of tabs for me and a few of my friends is around 2000, but if it crashes, delete tabs so your device can handle it. If Lightspeed loads too quickly, increase the number of tabs opened so it takes longer to load. <br>
+          </p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    function openFile() {
+      // Replace 'YOUR_FILE_URL' with the URL of the file you want to open
+      window.open('https://forms.gle/1oe15HSnwJ3NuqNw8', '_blank');
+    }
+  </script>
+</body>
+</html>
