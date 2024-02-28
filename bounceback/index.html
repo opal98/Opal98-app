@@ -1,66 +1,91 @@
-<!doctype html>
-<!--
-    Bounce Back ~ A boomerang roguelike for JS13k
-    Copyright (C) 2019 Frank Force
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details. 
--->    
-<!--
-    When life gets you down, 
-    it's never too late to...
-
-    B O U N C E B A C K
-
-    A JS13k 2019 Game
-    By Frank Force
-
-    WASD = Move
-    Mouse = Aim
-    Click = Throw
-    Space = Dash
-
-    Hints
-    - You will keep money after you die!
-    - You won't take damage while dashing.
-    - There are 10 levels.
-    - Sand slows down you and enemies.
-    - Yellow boormang can grab pickups.
-    - Blue boomerang does double damage.
-    - Beat the game to unlock speed run mode.
--->
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Bounce Back</title>
-<style>
-body
-{
-background:#000;
-overflow:hidden;
-margin:0;
-}
-canvas
-{
-width:100%;
-height:100%;
-image-rendering:-moz-crisp-edges;
-image-rendering:pixelated;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Game Website</title>
+  <style>
+    /* Adjust the style of the iframe to fit your layout */
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none; /* Remove border */
+    }
+
+    /* Style for the navigation buttons */
+    .nav-button {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.5); /* Slightly opaque black */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 9999; /* Ensure the buttons are above the iframe */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .nav-button:hover {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+    }
+
+    /* Positioning for the home button */
+    #home-button {
+      left: 10px;
+      top: 10px;
+    }
+
+    /* Positioning for the fullscreen button */
+    #fullscreen-button {
+      right: 10px;
+      top: 10px;
+    }
+
+    /* Center the icon vertically and horizontally */
+    .nav-button i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-<canvas id=c1></canvas>
-<canvas id=c2 style=visibility:hidden></canvas>
-<script src='gameEngine.js'></script>
-<script src='gameEngineDebug.js'></script>
-<script src='game.js'></script>
+  <!-- Home Button -->
+  <button id="home-button" class="nav-button" onclick="goHome()"><i class="fas fa-home"></i></button>
+
+  <!-- Fullscreen Button -->
+  <button id="fullscreen-button" class="nav-button" onclick="toggleFullScreen()"><i class="fas fa-expand"></i></button>
+
+  <!-- Embedding the Game File -->
+  <iframe src="./game.html" title="Your Game"></iframe>
+
+  <!-- Font Awesome Icons (adjust the path accordingly) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <!-- JavaScript Functions -->
+  <script>
+    function goHome() {
+      // Redirect to the home page
+      window.location.href = '../games.html'; // Adjust the path to the home file
+    }
+
+    function toggleFullScreen() {
+      var iframe = document.querySelector('iframe');
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
 </body>
 </html>

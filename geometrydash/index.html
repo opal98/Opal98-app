@@ -1,180 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Geometry Dash</title>
-<style media="screen">
-html, body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  font-size: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  overflow: hidden;
-}
-#wrapper {
-  display: block;
-  width: 100vw;
-  height: 75vw;
-  position: relative;
-}
-#monitors {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-@media (min-aspect-ratio: 480/360) {
-  #wrapper {
-    height: 100vh;
-    width: 133.33333333333334vh;
-  }
-}
-#stage {
-  width: 100%;
-  height: 100%;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Game Website</title>
+  <style>
+    /* Adjust the style of the iframe to fit your layout */
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none; /* Remove border */
+    }
 
-#loading-progress {
-  color: #0ff;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  font-size: 16px;
-}
+    /* Style for the navigation buttons */
+    .nav-button {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.5); /* Slightly opaque black */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 9999; /* Ensure the buttons are above the iframe */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
 
+    .nav-button:hover {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+    }
 
-.monitor {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.25rem;
-  font-size: 0.75rem;
-  overflow: hidden;
-  padding: 3px;
-  color: white;
-  white-space: pre;
-}
-.monitor-label {
-  margin: 0 5px;
-  font-weight: bold;
-}
-.monitor-value {
-  display: inline-block;
-  vertical-align: top;
-  min-width: 34px;
-  text-align: center;
-  border-radius: 0.25rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  user-select: text;
-  transform: translateZ(0);
-}
-.default .monitor-value, .slider .monitor-value {
-  background-color: rgba(0, 0, 0, 0.5);
-  margin: 0 5px;
-  padding: 1px 3px;
-}
-.large {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 0.1rem 0.25rem;
-  min-width: 3rem;
-}
-.large .monitor-label {
-  display: none;
-}
-.large .monitor-value {
-  font-size: 1rem;
-  width: 100%;
-}
-.list {
-  padding: 0;
-  overflow: auto;
-  overflow-x: hidden;
-}
-.list .monitor-label {
-  text-align: center;
-  padding: 3px;
-  width: 100%;
-  display: block;
-  margin: 0;
-  box-sizing: border-box;
-  white-space: pre-wrap;
-}
-.list .monitor-value {
-  display: block;
-}
-.row {
-  margin: 2px 5px;
-  transform: translateZ(0);
-  text-align: left;
-  border-radius: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  height: 20px;
-  line-height: 20px;
-  padding: 0 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+    /* Positioning for the home button */
+    #home-button {
+      left: 10px;
+      top: 10px;
+    }
 
-.slider input {
-  display: block;
-  width: 100%;
-  transform: translateZ(0);
-}
-#asking-box {
-  display: none;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: rgba(33, 33, 33, 0.7);
-}
-.asking #asking-box {
-  display: block;
-}
-#question {
-  display: block;
-  margin: 0 10px;
-  margin-top: 10px;
-  font-size: 12px;
-  color: white;
-}
-#answer {
-  border: none;
-  background: none;
-  width: 100%;
-  font: inherit;
-  font-size: 16px;
-  color: white;
-  padding: 10px;
-  box-sizing: border-box;
-}
-#answer:focus {
-  outline: none;
-}
-</style>
+    /* Positioning for the fullscreen button */
+    #fullscreen-button {
+      right: 10px;
+      top: 10px;
+    }
+
+    /* Center the icon vertically and horizontally */
+    .nav-button i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-<div id="wrapper">
-<canvas id="stage"></canvas>
-<div id="monitors"></div>
-<div id="asking-box">
-<label id="question" for="answer">Question</label>
-<input type="text" id="answer">
-</div>
-</div>
+  <!-- Home Button -->
+  <button id="home-button" class="nav-button" onclick="goHome()"><i class="fas fa-home"></i></button>
 
+  <!-- Fullscreen Button -->
+  <button id="fullscreen-button" class="nav-button" onclick="toggleFullScreen()"><i class="fas fa-expand"></i></button>
 
-<span id="loading-progress">...</span>
+  <!-- Embedding the Game File -->
+  <iframe src="./game.html" title="Your Game"></iframe>
 
+  <!-- Font Awesome Icons (adjust the path accordingly) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 
-<script type="text/javascript" src="./gdash.js"></script>
+  <!-- JavaScript Functions -->
+  <script>
+    function goHome() {
+      // Redirect to the home page
+      window.location.href = '../games.html'; // Adjust the path to the home file
+    }
+
+    function toggleFullScreen() {
+      var iframe = document.querySelector('iframe');
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
 </body>
 </html>

@@ -1,66 +1,91 @@
-<html><head>
-    
-    <title>xx142-b2.exe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>@keyframes B{0%,50%{opacity:1}51%,to{opacity:0}}*{user-select:none}body,html{margin:0;padding:0}#M,body{background:#000}body{display:flex;align-items:center;justify-content:center}#M{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;width:100vw;height:66.66vw}@media (min-aspect-ratio:3/2){#M{width:150vh;height:100vh}}#HUD{visibility:hidden;position:absolute;bottom:0;left:0;right:0;margin:10px}#L,#T{font-family:monospace;padding:15px;line-height:70px;font-size:60px;text-shadow:1px 1px 3px #000}#L{float:right;color:#afc;transition:opacity 1.2s linear;opacity:0}#L.a{opacity:1}#T{float:left;border-radius:10px;width:70px;text-align:center;transition:color 150ms linear,background-color 300ms linear;background:rgba(20,0,40,.3);border:1px solid rgba(20,0,40,.3)}#T.x{background:red}#c{padding:0;display:block;visibility:hidden}pre,small{position:absolute;right:0}pre{left:0;top:0;white-space:pre-wrap;padding:1em;bottom:0;color:#8fa;font-size:19px}#B{display:inline-block;background:#8fa;animation:B 1s linear infinite}.won #end{display:block}#end,.won #hud{display:none}#intro{overflow:hidden;max-height:0;transition:max-height 1.2s linear}#intro.a{max-height:100%}.started #intro,.started small{display:none}.started #C,.started #HUD{visibility:visible}small{font-family:monospace;font-size:13px;bottom:15px;color:#040}</style></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Game Website</title>
+  <style>
+    /* Adjust the style of the iframe to fit your layout */
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none; /* Remove border */
+    }
 
-  <body>
-    <main id="M">
-      <div id="HUD">
-        <div id="T">&#xA0;</div>
-        <div id="L">-</div>
-      </div>
-      <pre id="intro">Hello, <i>xx142-b2.exe</i>
+    /* Style for the navigation buttons */
+    .nav-button {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.5); /* Slightly opaque black */
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 9999; /* Ensure the buttons are above the iframe */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
 
-This is the year 2413,
-humanity is enslaved by an alien race for more than two centuries already.
+    .nav-button:hover {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+    }
 
-You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems.
+    /* Positioning for the home button */
+    #home-button {
+      left: 10px;
+      top: 10px;
+    }
 
-The alien antivirus will detect and delete you after 13 seconds.
+    /* Positioning for the fullscreen button */
+    #fullscreen-button {
+      right: 10px;
+      top: 10px;
+    }
 
-But remember: a file is never really deleted. Use the execution backtrace from your previous attempts to break in and destroy the main memory core.
+    /* Center the icon vertically and horizontally */
+    .nav-button i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Home Button -->
+  <button id="home-button" class="nav-button" onclick="goHome()"><i class="fas fa-home"></i></button>
 
---------------------------------------
+  <!-- Fullscreen Button -->
+  <button id="fullscreen-button" class="nav-button" onclick="toggleFullScreen()"><i class="fas fa-expand"></i></button>
 
-Controls:
-WASD / Arrows - movement
-Backspace     - kill -9 xx142-b2.exe
+  <!-- Embedding the Game File -->
+  <iframe src="./game.html" title="Your Game"></iframe>
 
---------------------------------------
+  <!-- Font Awesome Icons (adjust the path accordingly) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 
-Press any key to continue . . . <b id="B">&#xA0;</b>
-</pre>
-      <small>Copyright (c) 2019 Ben Clark, Salvatore Previti</small>
-      <pre id="end">Well done <i>xx142-b2.exe</i>,
+  <!-- JavaScript Functions -->
+  <script>
+    function goHome() {
+      // Redirect to the home page
+      window.location.href = '../games.html'; // Adjust the path to the home file
+    }
 
-You deactivated the memory core.
-
-All alien ships are destroyed.
-You freed humanity from slavery.
-
-
-
-How about a nice game of chess? <b id="B">&#xA0;</b>
-    </pre>
-      <canvas id="c"></canvas>
-    </main>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="./main.min.js"></script>
-  
-
-</body></html>
+    function toggleFullScreen() {
+      var iframe = document.querySelector('iframe');
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>
