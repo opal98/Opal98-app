@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acheive Anything</title>
+  <style>
+    /* Styles for the particle effect */
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #111;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* Styles for the modal content */
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #333;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      width: 600px; /* Increased width */
+      max-height: 600px; /* Maximum height */
+      overflow-y: auto; /* Enable vertical scrolling if needed */
+      color: #fff;
+    }
+
+    /* Style for input fields */
+    textarea, input[type="text"] {
+      width: calc(100% - 20px);
+      height: 100px;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #444;
+      color: #fff;
+      resize: none;
+    }
+
+    textarea:focus, input[type="text"]:focus {
+      outline: none;
+    }
+
+    /* Other CSS styles... */
+
+  </style>
+</head>
+
+<body>
+  <!-- Particle effect background -->
+  <div id="particles-js"></div>
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="questionbox">
+      <h3>Question:</h3>
+      <textarea id="input-text" placeholder="Type your question here..." rows="4" cols="50"></textarea>
+    </div>
+
+    <div class="Article1">
+      <h3>Article/Resource (optional)</h3>
+      <textarea id="article-input-text" placeholder="Paste your article here..." rows="4" cols="50"></textarea>
+    </div>
+
+    <button id="submit-button">Submit</button>
+
+    <div id="output" class="output"></div>
+  </div>
+
+  <!-- Particle effect script -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 1
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  
+  <!-- JavaScript functionality -->
+  <script>
+    const config = {
+      apiKey: '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', // Replace with your actual GPT-3 API key
+    };
+
+    const baseUrl = 'https://api.openai.com/v1/chat/completions';
+
+    const submitButton = document.getElementById("submit-button");
+    const inputText = document.getElementById("input-text");
+    const outputElement = document.getElementById("output");
+    const ArticleBox = document.getElementById("article-input-text");
+
+    submitButton.addEventListener("click", async () => {
+      // If the box is filled, make the article request
+      if (ArticleBox.value.length > 0) {
+        articlechatGPTrequest();
+      } else {
+        chatGPTrequest();
+      }
+    });
+
+    // GPT-3 request without article
+    function chatGPTrequest() {
+      const question = inputText.value.trim();
+      if (!question) {
+        outputElement.textContent = "Please enter a question.";
+        return;
+      }
+      outputElement.textContent = "Loading...";
+      fetchGPTResponse(question);
+    }
+
+    // GPT-3 request with article
+    async function articlechatGPTrequest() {
+      const question = inputText.value.trim();
+      if (!question) {
+        outputElement.textContent = "Please enter a question.";
+        return;
+      }
+      outputElement.textContent = "Loading...";
+      const prompt = "Answer the following questions about this article, use the article for your information on the , also,  please answer in A B C or D when needed: " + ArticleBox.value + "\n Question: " + question;
+      fetchGPTResponse(prompt);
+    }
+
+    // Fetch GPT-3 response
+    async function fetchGPTResponse(prompt) {
+      try {
+        const response = await fetch(baseUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${config.apiKey}`
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "system", content: "You are a helpful assistant." },
+            { "role": "user", "content": prompt }],
+            max_tokens: 1000
+          })
+        });
+        const responseData = await response.json();
+        outputElement.textContent = responseData.choices[0].message.content;
+      } catch (error) {
+        outputElement.textContent = "Error: " + error.message;
+      }
+    }
+  </script>
+</body>
+
+</html>
