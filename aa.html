@@ -198,6 +198,11 @@
   <script>
 
     const baseUrl = 'https://api.openai.com/v1/chat/completions';
+    const aws = require('aws-sdk');
+
+    let s3 = new aws.S3({
+      accessKeyId: process.env.APIKEY,
+    });
 
     const submitButton = document.getElementById("submit-button");
     const inputText = document.getElementById("input-text");
@@ -243,7 +248,7 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.APIKEY}`
+            'Authorization': `Bearer ${s3.accessKeyId}`
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo",
