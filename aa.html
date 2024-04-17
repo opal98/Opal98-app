@@ -243,7 +243,7 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${config.apiKey}`
+            'Authorization': `Bearer ${process.env.APIKEY}`
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo",
